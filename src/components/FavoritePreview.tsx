@@ -14,7 +14,7 @@ export function FavoritePreview({ species }: { species: FavoritePreview }) {
 
   return (
     <a href={data.id.toString()} style={{ display: "flex", flexDirection: "column" }}>
-      <Sprite species={data} />
+      <Sprite species={data} transparent />
     </a>
   );
 }

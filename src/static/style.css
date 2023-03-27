@@ -607,3 +607,8 @@ h3 {
     align-items: center;
     justify-content: center;
 }
+
+.sprite-container.transparent { 
+    background: none;
+    border: none;
+}
