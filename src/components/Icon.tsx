@@ -1,3 +1,5 @@
+import * as Feather from 'react-feather'
+
 export function Icon({
   name,
   id,
@@ -7,5 +9,7 @@ export function Icon({
   id?: string;
   className?: string;
 }) {
-  return <div />;
+  // @ts-ignore
+  const Target = Feather[name]
+  return <Target height="1em" width="1em"/>;
 }

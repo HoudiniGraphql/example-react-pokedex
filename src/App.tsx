@@ -101,7 +101,7 @@ function App() {
               }
             >
               <Icon
-                name="star"
+                name="Star"
                 className="favorite-star"
                 fill={data.species.favorite ? "gold" : "lightgrey"}
               />

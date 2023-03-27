@@ -9,7 +9,7 @@ export function UpButton({
 }) {
   return (
     <button className="arrow-button" onClick={onClick} disabled={disabled}>
-      <Icon name="arrow-up" />
+      <Icon name="ArrowUp" />
     </button>
   );
 }
