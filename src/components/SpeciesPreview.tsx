@@ -21,9 +21,9 @@ export function SpeciesPreview({
   );
 
   return (
-    <a href={data.id}>
+    <a href={'/' + data.id}>
       <SpeciesPreviewNumber value={number} />
-      <Sprite species={species} class="preview-sprite" />
+      <Sprite species={data} className="preview-sprite" />
       <Display>{data.name}</Display>
     </a>
   );

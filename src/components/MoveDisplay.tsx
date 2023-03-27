@@ -19,7 +19,7 @@ export function MoveDisplay({ move }: { move: MoveDisplay }) {
     `
   );
 
-  const padValue = (val: string) => {
+  const padValue = (val: number | null) => {
     if (val === null) {
       return "..0";
     }

@@ -4,8 +4,8 @@ export function Container({
   left,
   right,
 }: {
-  left: React.ReactNode;
-  right: React.ReactNode;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
 }) {
   return (
     <div className="pokedex">

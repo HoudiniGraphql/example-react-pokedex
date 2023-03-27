@@ -1,15 +1,27 @@
+import { useFragment, graphql, type SpriteInfo } from '$houdini'
+
 export function Sprite({
   id,
-  src,
-  speciesName,
+  species,
+  className,
 }: {
+  species: SpriteInfo;
   id?: string;
-  src: string;
-  speciesName: string;
+  className?: string
 }) {
+  
+    const info = useFragment(species, graphql(`
+        fragment SpriteInfo on Species {
+            name
+            sprites {
+                front
+            }
+        }
+    `))
+
   return (
-    <div className="sprite-container" id={id}>
-      <img height="100%" src={src} alt={`${speciesName} sprite`} />
+    <div className={`sprite-container ${className}`} id={id}>
+      <img height="100%" src={info.sprites.front} alt={`${info.name} sprite`} />
     </div>
   );
 }
