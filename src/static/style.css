@@ -425,7 +425,6 @@
     color: black;
 }
 
-
 .favoritesTitle {
     padding: 0;
     margin: 0;
@@ -482,7 +481,6 @@
     transform-origin: 50% 50%;
 }
 
-
 .move-display {
     position: relative;
     padding: 10px 20px;
@@ -526,7 +524,6 @@ h3 {
     margin-top: 3px;
 }
 
-
 .preview-sprite {
     height: 102px;
     width: 102px;
@@ -542,7 +539,6 @@ h3 {
     text-shadow: #e78181 -1px 1px;
     color: black;
 }
-
 
 .placeholder-background {
     background: linear-gradient(15deg, #83887b 64%, #8b8f81 70%, #8b8f81 81%, #babfb1 86%, #8b8f81 89%, #8b8f81 100%);

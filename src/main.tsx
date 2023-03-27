@@ -13,7 +13,7 @@ import { Container } from "./components";
 
 let router = createBrowserRouter([
   {
-    path: "/",
+    path: ":id?",
     Component: () => (
       <React.Suspense fallback={<Container />}>
         <App />

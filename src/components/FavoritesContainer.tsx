@@ -6,7 +6,7 @@ export function FavoritesContainer({
   children: React.ReactNode;
 }) {
   return (
-    <div id="favorites-container">
+    <div className="favorites-container">
       <h2 className="favoritesTitle">Favorites</h2>
       <div>{children}</div>
     </div>

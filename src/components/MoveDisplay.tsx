@@ -1,13 +1,14 @@
 import { Display } from ".";
 import { useFragment, graphql, type MoveDisplay } from "$houdini";
 
-export function MoveDisplay({ move }: { move: MoveDisplay }) {
+export function MoveDisplay({ move }: { move: MoveDisplay | null }) {
   const data = useFragment(
     move,
-    graphql`
+    graphql(`
       fragment MoveDisplay on SpeciesMove {
         learned_at
         method
+
         move {
           name
           accuracy
@@ -16,7 +17,7 @@ export function MoveDisplay({ move }: { move: MoveDisplay }) {
           type
         }
       }
-    `
+    `)
   );
 
   const padValue = (val: number | null) => {
@@ -40,8 +41,12 @@ export function MoveDisplay({ move }: { move: MoveDisplay }) {
     );
   };
 
+  if (!data) {
+    return <Display className="move-display">{""}</Display>;
+  }
+
   return (
-    <Display id="move-display">
+    <Display className="move-display">
       <div>
         <h3>{data.move.name}</h3>
         <div className="move-display-stat">
