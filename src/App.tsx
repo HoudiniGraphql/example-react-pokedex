@@ -54,7 +54,7 @@ function App() {
     }
   );
 
-  const [togglePending, toggleFavorite] = useMutation(
+  const [, toggleFavorite] = useMutation(
     graphql(`
       mutation ToggleFavorite($id: Int!) {
         toggleFavorite(id: $id) {
@@ -96,7 +96,9 @@ function App() {
             </Display>
             <button
               className="favorite"
-              onClick={() => toggleFavorite({ id: data.species!.id })}
+              onClick={() =>
+                toggleFavorite({ variables: { id: data.species!.id } })
+              }
             >
               <Icon
                 name="star"
