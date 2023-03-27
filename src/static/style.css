@@ -1,5 +1,5 @@
 
-#pokedex {
+.pokedex {
     display: flex;
     flex-direction: row;
     height: 600px;
@@ -11,13 +11,13 @@
     position: relative;
 }
 
-#left-panel,
-#divider,
-#right-panel {
+.left-panel,
+.divider,
+.right-panel {
     background-color: var(--pokedex-red);
 }
 
-#divider {
+.divider {
     height: calc(90% + 23px);
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     border-bottom-width: 2px;
 }
 
-#left-panel {
+.left-panel {
     width: 10px;
     flex-grow: 1;
     border-bottom-left-radius: 5px;
@@ -43,7 +43,7 @@
     background-color: var(--pokedex-red);
 }
 
-#right-panel {
+.right-panel {
     width: 10px;
     height: 80%;
     flex-grow: 1;
@@ -56,11 +56,11 @@
     gap: 30px;
 }
 
-#right-panel *:not(#cap) {
+.right-panel *:not(#cap) {
     z-index: 10;
 }
 
-#middle-panel {
+.middle-panel {
     height: 100%;
     width: 30px;
     display: flex;
@@ -75,7 +75,7 @@
     flex-direction: column;
 }
 
-#divider > * {
+.divider > * {
     border-radius: 4px;
     border: solid #2d0d0d 2px;
 }
@@ -104,7 +104,7 @@
     border-left-color: #5f1010 !important;
 }
 
-#right-cap {
+.right-cap {
     height: 128px;
     position: absolute;
     left: calc(50% + 15px);
@@ -123,7 +123,7 @@
     z-index: 5;
 }
 
-#right-cap-shadow {
+.right-cap-shadow {
     height: calc(21%);
     position: absolute;
     left: calc(50% + 15px);
@@ -144,7 +144,7 @@
     z-index: 6;
 }
 
-#outer-line {
+.outer-line {
     position: absolute;
     background: black;
     left: -10px;
@@ -167,7 +167,7 @@
     );
 }
 
-#border-spacing {
+.border-spacing {
     position: absolute;
     background: var(--pokedex-red);
     left: -7px;
@@ -192,7 +192,7 @@
     z-index: 2;
 }
 
-#inner-border {
+.inner-border {
     position: absolute;
     background: black;
     left: -4px;
@@ -214,28 +214,28 @@
     z-index: 3;
 }
 
-#top-left-corner {
+.top-left-corner {
     top: -10px;
     left: -10px;
     clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
     border: 3px solid black;
 }
 
-#bottom-right-corner {
+.bottom-right-corner {
     bottom: -10px;
     right: -10px;
     clip-path: polygon(100% 50%, 100% 100%, 50% 100%, 50% 50%);
     border: 10px double black;
 }
 
-#middle-corner {
+.middle-corner {
     top: -10px;
     right: calc(50% - 15px);
     clip-path: polygon(50% 0%, 100% 0%, 100% 50%, 50% 50%);
     border: 3px solid black;
 }
 
-#bottom-left-corner {
+.bottom-left-corner {
     bottom: -10px;
     left: -10px;
     clip-path: polygon(0% 50%, 50% 50%, 50% 100%, 0% 100%);
@@ -252,7 +252,7 @@
     z-index: 5;
 }
 
-#left-cap {
+.left-cap {
     height: 128px;
     position: absolute;
     right: calc(50% + 14px);
@@ -272,7 +272,7 @@
     transform: scaleX(-1);
 }
 
-#left-cap-shadow {
+.left-cap-shadow {
     height: 128px;
     position: absolute;
     right: calc(50% + 15px);
@@ -292,7 +292,7 @@
     transform: scaleX(-1);
 }
 
-#left-cap-border {
+.left-cap-border {
     height: calc(12% - 5px);
     position: absolute;
     right: calc(50% - 15px);
@@ -310,7 +310,7 @@
     );
 }
 
-#left-header {
+.left-header {
     height: calc(18% + 3px);
     position: absolute;
     right: calc(49.9% - 12px);
@@ -321,7 +321,7 @@
     transform: scaleX(-1);
 }
 
-#right-panel-shadow {
+.right-panel-shadow {
     position: absolute;
     background-color: var(--pokedex-shadow);
     right: 0;
@@ -332,7 +332,7 @@
     border-bottom-right-radius: 12px;
 }
 
-#ball {
+.ball {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -345,7 +345,7 @@
     outline: 3px solid black;
 }
 
-#ball-highlight {
+.ball-highlight {
     position: absolute;
     width: 18px;
     height: 18px;
@@ -356,7 +356,7 @@
     z-index: 11;
 }
 
-#light-container {
+.light-container {
     position: absolute;
     top: 10px;
     left: 105px;
@@ -375,19 +375,19 @@
     border: 2px solid black;
 }
 
-#red-light {
+.red-light {
     background: rgb(167, 3, 3);
 }
 
-#yellow-light {
+.yellow-light {
     background: rgb(250, 226, 10);
 }
 
-#green-light {
+.green-light {
     background: rgb(16, 145, 33);
 }
 
-#highlights {
+.highlights {
     position: absolute;
     top: 15px;
     left: 111px;
@@ -406,7 +406,7 @@
     z-index: 13;
 }
 
-#background {
+.background {
     position: absolute;
     top: 28%;
     left: 10px;
@@ -433,7 +433,7 @@
     margin-top: 3px;
 }
 
-#favorites-container {
+.favorites-container {
     position: absolute;
     left: 0;
     right: 0;
@@ -446,7 +446,7 @@
     height: 130px;
 }
 
-#favorites-container div {
+.favorites-container div {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
@@ -454,11 +454,11 @@
     height: 100%;
 }
 
-#favorites-container ~ #pokedex {
+.favorites-container ~ #pokedex {
     margin-top: 200px;
 }
 
-#favorites-container p {
+.favorites-container p {
     padding: 0;
     margin: 0;
     margin-top: -10px;
@@ -469,7 +469,7 @@
     align-items: center;
 }
 
-#favorites-container p,
+.favorites-container p,
 .favoritesTitle {
     font-size: 24px;
     font-family: 'VT323';
@@ -483,7 +483,7 @@
 }
 
 
-#move-display {
+.move-display {
     position: relative;
     padding: 10px 20px;
     height: 80px;

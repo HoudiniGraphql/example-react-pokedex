@@ -1,36 +1,38 @@
-import { useQueryHandle, graphql } from '$houdini'
+import { useQueryHandle, graphql } from "$houdini";
 
 function App() {
-  const { data } = useQueryHandle(graphql(`
-    query Info($id: Int = 1) {
-      species(id: $id) {
-        id
-        name
-        flavor_text
-        favorite
+  const { data } = useQueryHandle(
+    graphql(`
+      query Info($id: Int = 1) {
+        species(id: $id) {
+          id
+          name
+          flavor_text
+          favorite
 
-        evolution_chain {
-          ...SpeciesPreview
-        }
+          evolution_chain {
+            ...SpeciesPreview
+          }
 
-        moves(first: 1) @paginate {
-          edges {
-            node {
-              ...MoveDisplay
+          moves(first: 1) @paginate {
+            edges {
+              node {
+                ...MoveDisplay
+              }
             }
           }
+
+          ...SpriteInfo
         }
-
-        ...SpriteInfo
+        favorites @list(name: "FavoriteSpecies") {
+          ...FavoritePreview
+        }
       }
-      favorites @list(name: "FavoriteSpecies") {
-        ...FavoritePreview
-      }
-    }
-  `))
+    `),
+    {}
+  );
 
-  return <div>hello</div>;
-
+  return <div>{JSON.stringify(data)}</div>;
 }
 
 export default App;

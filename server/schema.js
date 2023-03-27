@@ -115,7 +115,7 @@ export const resolvers = {
       return data.species[id - 1];
     },
     async pokemon(_, args) {
-      const { connectionFromArray } = await import("../../lib/connections.mjs");
+      const { connectionFromArray } = await import("./connections.mjs");
 
       const connection = connectionFromArray(data.species, args);
       connection.totalCount = data.species.length;
@@ -160,7 +160,7 @@ export const resolvers = {
       return evo_chain.map((id) => data.species[id - 1]);
     },
     async moves({ moves }, args) {
-      const { connectionFromArray } = await import("../../lib/connections.mjs");
+      const { connectionFromArray } = await import("./connections.mjs");
 
       const connection = connectionFromArray(
         moves.map(({ name, ...info }) => ({ ...info, move: data.moves[name] })),

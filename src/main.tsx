@@ -1,14 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HoudiniProvider } from "$houdini";
 
+import "./static/colors.css";
+import "./static/elements.css";
+import "./static/style.css";
+
+import client from "./client";
 import App from "./App";
-import { Container } from './components';
+import { Container } from "./components";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    Component: App,
+    Component: () => (
+      <React.Suspense fallback={<Container />}>
+        <App />
+      </React.Suspense>
+    ),
   },
 ]);
 
@@ -18,8 +28,8 @@ if (import.meta.hot) {
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-      <React.Suspense fallback={<Container />}>
-        <RouterProvider router={router} fallbackElement={<Container />} />
-      </React.Suspense>
+    <HoudiniProvider client={client}>
+      <RouterProvider router={router} fallbackElement={<Container />} />
+    </HoudiniProvider>
   </React.StrictMode>
 );
