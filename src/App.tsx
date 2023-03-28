@@ -1,5 +1,5 @@
 import { useQueryHandle, useMutation, graphql } from "$houdini";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import {
   Container,
   Display,
@@ -138,20 +138,20 @@ function App() {
               </div>
             </div>
             <nav>
-              <a
-                href={data.species.id <= 1 ? "/1" : "/" + (data.species.id - 1)}
+              <Link
+                to={data.species.id <= 1 ? "/1" : "/" + (data.species.id - 1)}
                 data-disabled={data.species.id <= 1}
               >
                 previous
-              </a>
-              <a
-                href={
+              </Link>
+              <Link
+                to={
                   data.species.id >= 151 ? "150" : "/" + (data.species.id + 1)
                 }
                 data-disabled={data.species.id >= 151}
               >
                 next
-              </a>
+              </Link>
             </nav>
           </>
         }
