@@ -1,6 +1,7 @@
 import { graphql, useFragment, type SpeciesPreview } from "$houdini";
 import { Sprite, Display } from ".";
 import { SpeciesPreviewNumber } from "./SpeciesPreviewNumber";
+import { Link } from 'react-router-dom'
 
 export function SpeciesPreview({
   species,
@@ -21,10 +22,10 @@ export function SpeciesPreview({
   );
 
   return (
-    <a href={'/' + data.id}>
+    <Link to={'/' + data.id}>
       <SpeciesPreviewNumber value={number} />
       <Sprite species={data} className="preview-sprite" />
       <Display>{data.name}</Display>
-    </a>
+    </Link>
   );
 }
