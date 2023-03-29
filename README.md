@@ -1,6 +1,6 @@
 # Houdini Example: React Pokédex
 
-This repo contains a port of the Pokedex created in the [Getting Started guide](https://houdinigraphql.com/intro) to React.
+This repo contains a React port of the Pokédex created in the [Getting Started guide](https://houdinigraphql.com/intro).
 
 ## Local Development
 
