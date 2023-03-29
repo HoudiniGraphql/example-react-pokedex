@@ -1,5 +1,4 @@
 import { useQueryHandle, useMutation, graphql } from "$houdini";
-import { useParams, Link } from "react-router-dom";
 import {
   Container,
   Display,
@@ -13,10 +12,10 @@ import {
   Sprite,
   UpButton,
 } from "./components";
+import { Link, useRouterContext } from "./router";
 
 function App() {
-  // grab the id url parameter
-  const { id } = useParams();
+  const { currentRoute } = useRouterContext();
 
   const { data, pageInfo, loadNext, loadPrevious } = useQueryHandle(
     graphql(`
@@ -50,7 +49,7 @@ function App() {
       }
     `),
     {
-      id: parseInt(id ?? "1"),
+      id: parseInt(currentRoute.slice(1), 10),
     }
   );
 
@@ -125,7 +124,7 @@ function App() {
               ))}
             </div>
             <div className="move-summary">
-              <MoveDisplay move={data.species.moves.edges[0].node} />
+              <MoveDisplay move={data.species.moves.edges[0]?.node} />
               <div className="move-controls">
                 <UpButton
                   disabled={!pageInfo.hasPreviousPage}
