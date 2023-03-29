@@ -16,6 +16,10 @@ import { Link, useRouterContext } from "./router";
 
 function App() {
   const { currentRoute } = useRouterContext();
+  let id = parseInt(currentRoute.slice(1), 10)
+  if (isNaN(id)) {
+   id = 1 
+  }
 
   const { data, pageInfo, loadNext, loadPrevious } = useQueryHandle(
     graphql(`
@@ -49,7 +53,7 @@ function App() {
       }
     `),
     {
-      id: parseInt(currentRoute.slice(1), 10),
+      id,
     }
   );
 
