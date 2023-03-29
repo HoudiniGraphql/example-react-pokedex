@@ -8,7 +8,7 @@ export function DownButton({
   onClick?: () => void;
 }) {
   return (
-    <button className="arrow-button" onClick={onClick} disabled={disabled}>
+    <button className="arrow-button" onClick={onClick} data-disabled={disabled}>
       <Icon name="ArrowDown" />
     </button>
   );

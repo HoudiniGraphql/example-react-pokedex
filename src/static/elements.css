@@ -124,6 +124,11 @@ a {
 	transform: rotate(-60deg) !important;
 }
 
+.arrow-button[data-disabled="true"] { 
+	opacity: .2;
+	cursor: default;
+}
+
 .move-summary {
 	display: flex;
 	flex-direction: row;
