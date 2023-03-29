@@ -5,6 +5,7 @@ export function Link({
   to,
   children,
   style,
+  ...props
 }: {
   to: string;
   children: React.ReactNode;
@@ -26,7 +27,7 @@ export function Link({
   };
 
   return (
-    <a href={to} onClick={click} style={style}>
+    <a href={to} onClick={click} style={style} {...props}>
       {children}
     </a>
   );
